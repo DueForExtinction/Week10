@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns: th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:object="${newItem}" th:action="@{/update/{id}(id=${newItem.id})}" method='POST'> 
+Name:<input name="name" size="20" th:field="*{name}"><br/>
+Price<input name="price" size="10" th:field="*{price}"><br/>
+Quantity<input name="quant" size="10" th:field="*{quant}"><br/>
+Location letter<input name="InvLocation.locationLetter" size="20" th:field="*{InvLocation.locationLetter}"><br/>
+Location number<input name="InvLocation.locationNum" size="20" th:field="*{InvLocation.locationNum}"><br/>
+<input name="submit" type="submit" value="submit"/> 
+</form>
+<a href="viewAll">View all items in inventory</a>
+</body>
+</html>

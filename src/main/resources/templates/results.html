@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View all items</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentItem : ${inventoryitem}">
+<td th:text="${currentItem.id}"/>
+<td th:text="${currentItem.name}"/>
+<td th:text="${currentItem.price}"/>
+<td th:text="${currentItem.InvLocation.locationNum}"/>
+<td th:text="${currentItem.InvLocation.locationLetter}"/>
+<td><a th:href="@{/edit/{id}(id=${currentItem.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentItem.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputItem">Add a new Item</a>
+</body>
+</html>
